@@ -25,8 +25,8 @@ public class BikeEntry1 {
     }
 
     public int getTotal(){
-        int total = values[]
-        return total;
+        int total = values[8]+ values[9];
+            return total;
     }
 
     @Override

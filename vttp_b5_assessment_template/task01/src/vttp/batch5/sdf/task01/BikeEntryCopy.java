@@ -1,4 +1,4 @@
-package vttp.batch5.sdf.task01.models;
+package vttp.batch5.sdf.task01;
 //
 // IMPORTANT: DO NOT MODIFY THIS CLASS
 
@@ -9,17 +9,16 @@ public class BikeEntryCopy {
 	private boolean holiday;
 	private int weekday;
 	private int weather;
-	private int casual;
-	private int registered;
+	private int total;
 
-	public BikeEntryCopy(int season, int month, boolean holiday, int weekday, int weather, int casual, int registered) {
+	public BikeEntryCopy(int season, int month, boolean holiday, int weekday, int weather, String position, int total) {
         this.season = season;
 		this.month =  month;
 		this.holiday = holiday;
         this.weekday = weekday;
         this.weather = weather;
-		this.casual = casual;
-		this.registered = registered;
+		this.position = position;
+		this.total = total;
     }
 
 	public void setSeason(int season) { this.season = season; }
@@ -37,11 +36,14 @@ public class BikeEntryCopy {
 	public void setWeather(int weather) { this.weather = weather; }
 	public int getWeather() { return this.weather; }
 
-	public void setCasual(int casual) { this.casual = casual; }
-	public int getCasual() { return this.casual; }
+	public void setPosition(int total) {
+		String 
 
-	public void setRegistered(int registered) { this.registered = registered; }
-	public int getRegistered() { return this.registered; }
+	}
+
+	public void setTotal(int casual, int registered) { this.total = casual + registered; }	
+	public int getTotal() { return this.total; }
+
 
 	public static BikeEntryCopy toBikeEntry(String[] cols) {
 		BikeEntryCopy entry = new BikeEntryCopy();
@@ -50,8 +52,7 @@ public class BikeEntryCopy {
 		entry.setHoliday(toBoolean(cols[2]));
 		entry.setWeekday(toInt(cols[3]));
 		entry.setWeather(toInt(cols[4]));
-		entry.setCasual(toInt(cols[8]));
-		entry.setRegistered(toInt(cols[9]));
+		entry.setTotal();
 		return entry;
 	}
 
@@ -79,10 +80,7 @@ public class BikeEntryCopy {
 	}
 }
         
-		return "The" + position + "recorded number of cyclists was in" + season + ", 
-        on a " + weekday + "in the month of" + month + "." + '\''
-        "There were a total of " + count + "cyclist." + "The weather was " + weather + "." + '\''
-        day + "was not a holiday."
+		
 
 
 
