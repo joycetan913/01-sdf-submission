@@ -135,19 +135,21 @@ public static String getPosition() {
 		total = i;
 		position = POSITION[]
 
-	}
+	return this.position = position;
+
+}
 
 	public void setPosition() {
 		int count;
 		String position = "";
 	
 		for (String position : POSITIONS) {
-			if (i > total) {
-				total = i;
-				position = POSITIONS[i]; // Assuming you're using indices to access your array
+			if (int i = count > total) {
+				total = count;
+				position = POSITIONS[i]; 
 			}
 		}
 	
-		this.position = position; // Now set the position with the highest total
+		this.position = position; 
 	}
 	```

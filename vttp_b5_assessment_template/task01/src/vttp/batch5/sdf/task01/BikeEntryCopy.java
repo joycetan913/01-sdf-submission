@@ -36,7 +36,7 @@ public class BikeEntryCopy {
 	public void setWeather(int weather) { this.weather = weather; }
 	public int getWeather() { return this.weather; }
 
-	public void setPosition(int total) {
+	public void setPosition() {
 		String 
 
 	}
@@ -53,6 +53,7 @@ public class BikeEntryCopy {
 		entry.setWeekday(toInt(cols[3]));
 		entry.setWeather(toInt(cols[4]));
 		entry.setTotal();
+		entry.setPosition();
 		return entry;
 	}
 
@@ -74,8 +75,8 @@ public class BikeEntryCopy {
                 ", holiday='" + holiday + '\'' +
                 ", weekday='" + weekday + '\'' + 
 				", weather='" + weather + '\'' + 
-				", casual='" + casual+ '\'' + 
-				", registered='" + registered + '\'' + 
+				", position='" + position + '\'' + 
+				", total='" + total + '\'' + 
                 '}';
 	}
 }

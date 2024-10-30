@@ -27,15 +27,11 @@ public class Main {
                     System.out.println("Skipping incomplete line: " + line);
                     continue;
                 }  
-
-
-            String highestPosition = null;
-            int highestCount = 0;
-            for (int count) {
-                if (entry.getValue() > highestCount) {
-                    highestCount = entry.getValue();
-                    highestCountry = entry.getKey();
-            int[] totalSum = values.getTotal();
+            
+                int total = entry.getTotal();
+                int currentCount = positionsMap.getOrDefault(total, 0);
+                currentCount++;
+                positionsMap.put(position, total);
 
 
         } catch (IOException e) {
@@ -43,13 +39,25 @@ public class Main {
             return; 
         }
 
-    public String readPara(){
+        String highestPosition = null;
+        int highestCount = 0;
+        for (Map.Entry<String, Integer> entry : positionsMap.entrySet()) {
+            if (entry.getTotal() > highestCount) {
+                highestCount = entry.getTotal();
+                highestPosition = entry.getPosition();
+            }
+        }
+
+        if (highestPosition != null) {
+            System.out.println("Position: " + highestPosition + " with count: " + highestCount);
+        } else {
+            System.out.println("No data found.");
+        }
+
         System.out.println("The " + position + "recorded number of cyclists was in" + season +", on a " + weekday 
         + "in the month of " + month + ". " 
         + "There were a total of " + total + "cyclist. The weather was " + weather + ". " + day + "was not a holiday.")
 
 	}
-
-}
 
 }
