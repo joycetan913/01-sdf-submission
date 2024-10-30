@@ -46,7 +46,4 @@ public class TicTacToe {
         return true;
     }
 
-    public static void main(String[] args) {
-        TicTacToe game = new TicTacToe();
-    }
 }

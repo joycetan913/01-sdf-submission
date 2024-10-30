@@ -12,14 +12,14 @@ public class BikeEntryCopy {
 	private int casual;
 	private int registered;
 
-	public BikeEntryCopy(String position, int season, int weekday, int month, int total, int weather, boolean holiday) {
-        this.position = position;
+	public BikeEntryCopy(int season, int month, boolean holiday, int weekday, int weather, int casual, int registered) {
         this.season = season;
+		this.month =  month;
+		this.holiday = holiday;
         this.weekday = weekday;
-        this.month =  month;
-        this.total = total;
         this.weather = weather;
-        this.holiday = holiday;
+		this.casual = casual;
+		this.registered = registered;
     }
 
 	public void setSeason(int season) { this.season = season; }
@@ -65,25 +65,24 @@ public class BikeEntryCopy {
 		return toInt(col) == 1;
 	}
 
-
-	public String getPosition(){
-
-        return position;
-    }
-
-    public int getTotal(){
-        int total = cols[8] + cols[9];
-        return total;
-    }
-
     @Override
     public String toString(){
-        return "The" + position + "recorded number of cyclists was in" + season + ", 
+		return "BikeEntryCopy{" +
+         		"season='" + season + '\'' +
+                ", month='" + month + '\'' +
+                ", holiday='" + holiday + '\'' +
+                ", weekday='" + weekday + '\'' + 
+				", weather='" + weather + '\'' + 
+				", casual='" + casual+ '\'' + 
+				", registered='" + registered + '\'' + 
+                '}';
+	}
+}
+        
+		return "The" + position + "recorded number of cyclists was in" + season + ", 
         on a " + weekday + "in the month of" + month + "." + '\''
         "There were a total of " + count + "cyclist." + "The weather was " + weather + "." + '\''
         day + "was not a holiday."
-	}
 
 
-}
 
